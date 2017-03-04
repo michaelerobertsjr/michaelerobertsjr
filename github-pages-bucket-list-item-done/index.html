@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>GitHub Pages Bucket List Item Done</title>
+    <title>GitHub Pages Bucket List Item - Done!</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -21,18 +21,19 @@
     
     <meta property="og:site_name" content="MERN Tech Blog">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="GitHub Pages Bucket List Item Done">
-    <meta property="og:description" content="Hello World!  This is a developer bucket list item: Create a blog using GitHub pages.  Stay tuned for more.">
+    <meta property="og:title" content="GitHub Pages Bucket List Item - Done!">
+    <meta property="og:description" content="Hello World!   I have had a developer bucket list item: use GitHub pages to host a blog, and have the maintenance not suck.  The main thing that has always made this project a non starter has been Jekyll.  First off I don't use much Ruby, so my system is often">
     <meta property="og:url" content="http://merobertsjr.com/github-pages-bucket-list-item-done/">
     <meta property="article:published_time" content="2017-03-04T21:47:11.000Z">
-    <meta property="article:modified_time" content="2017-03-04T21:47:11.000Z">
+    <meta property="article:modified_time" content="2017-03-04T22:21:16.000Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="GitHub Pages Bucket List Item Done">
-    <meta name="twitter:description" content="Hello World!  This is a developer bucket list item: Create a blog using GitHub pages.  Stay tuned for more.">
+    <meta name="twitter:title" content="GitHub Pages Bucket List Item - Done!">
+    <meta name="twitter:description" content="Hello World!   I have had a developer bucket list item: use GitHub pages to host a blog, and have the maintenance not suck.  The main thing that has always made this project a non starter has been Jekyll.  First off I don't use much Ruby, so my system is often">
     <meta name="twitter:url" content="http://merobertsjr.com/github-pages-bucket-list-item-done/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Michael Roberts Jr">
     <meta name="twitter:site" content="@merobertsjr">
+    <meta name="twitter:creator" content="@merobertsjr">
     
     <script type="application/ld+json">
 {
@@ -53,13 +54,16 @@
             "height": 250
         },
         "url": "http://merobertsjr.com/author/michael/",
-        "sameAs": []
+        "sameAs": [
+            "https://twitter.com/merobertsjr"
+        ],
+        "description": "An instructor at Origin Code Academy, Board Member of SanDiegoJS. A FullStack JavaScript practitioner. Primarily using the MERN (MongoDb, ExpressJS, React, NodeJS), Angular &amp; C#."
     },
-    "headline": "GitHub Pages Bucket List Item Done",
+    "headline": "GitHub Pages Bucket List Item - Done!",
     "url": "http://merobertsjr.com/github-pages-bucket-list-item-done/",
     "datePublished": "2017-03-04T21:47:11.000Z",
-    "dateModified": "2017-03-04T21:47:11.000Z",
-    "description": "Hello World!  This is a developer bucket list item: Create a blog using GitHub pages.  Stay tuned for more.",
+    "dateModified": "2017-03-04T22:21:16.000Z",
+    "description": "Hello World!   I have had a developer bucket list item: use GitHub pages to host a blog, and have the maintenance not suck.  The main thing that has always made this project a non starter has been Jekyll.  First off I don&#x27;t use much Ruby, so my system is often",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://merobertsjr.com"
@@ -101,14 +105,45 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">GitHub Pages Bucket List Item Done</h1>
+            <h1 class="post-title">GitHub Pages Bucket List Item - Done!</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="2017-03-04">04 March 2017</time> 
             </section>
         </header>
 
         <section class="post-content">
-            <p>Hello World!  This is a developer bucket list item: Create a blog using GitHub pages.  Stay tuned for more.</p>
+            <p>Hello World!  </p>
+
+<p>I have had a developer bucket list item: use <a href="https://pages.github.com/">GitHub pages</a> to host a blog, and have the maintenance not suck.  The main thing that has always made this project a non starter has been <a href="https://jekyllrb.com/docs/quickstart/">Jekyll</a>.  First off I don't use much Ruby, so my system is often not optimized for it. It also feels strange to use Ruby when their are so many great JS options available to keep this project FullStack JS.</p>
+
+<p>I decided to use <a href="https://ghost.org/">Ghost</a> which is an open source JavaScript based blog platform.  The result is what you see now!</p>
+
+<p>This is just the beginning... Check an item off of my Todo list:</p>
+
+<p>[ ] Create a Blog using GitHub pages.</p>
+
+<p>This project ended up being fairly easy to accomplish.  I used most of the notes from <a href="https://github.com/paladini/ghost-on-github-pages">Paladini's repository</a> to setup Ghost, and used Buster to convert the content to static pages for GitHub Pages.</p>
+
+<p>I decided to create a root project folder and put two child folders inside:</p>
+
+<ul>
+<li>ghost</li>
+<li>static</li>
+</ul>
+
+<p>Then I initialized a git repository in each folder.  The ghost repository would be private, and the static repository needs to be made public when deploying to GitHub.  Set the static repository files to use the master branch for gh-pages on GitHub. And Voila!</p>
+
+<p>Since I decided to modify the folder structure I also modified the <code>update.sh</code> script to change directory into each folder, commit the updates, and push changes to each repo. </p>
+
+<p>If you plan to tackle this project here are a few tips:</p>
+
+<ol>
+<li><p>Add a domain name.  I was disappointed that initially my site was only available at: <code>http://michaelerobertsjr.github.io/michaelerobertsjr/</code> not what I expected based on the docs.  I registered a name to clean things up a bit.</p></li>
+<li><p>Update the <code>config.js</code> in Ghost to reflect your domain name once you have it setup.</p></li>
+<li><p>You must run Ghost when you want to publish the site.  Buster will need to crawl the your site locally to create the static files.</p></li>
+<li><p>Make sure you use <code>npm start --production</code> when you run Ghost so that it will use the correct base url in the static files that are generated by buster.</p></li>
+<li><p>Enjoy and stay tuned for more content.</p></li>
+</ol>
         </section>
 
         <footer class="post-footer">
@@ -121,7 +156,7 @@
             <section class="author">
                 <h4><a href="../author/michael/">Michael Roberts Jr</a></h4>
 
-                    <p>Read <a href="../author/michael/">more posts</a> by this author.</p>
+                    <p>An instructor at Origin Code Academy, Board Member of SanDiegoJS. A FullStack JavaScript practitioner. Primarily using the MERN (MongoDb, ExpressJS, React, NodeJS), Angular &amp; C#.</p>
                 <div class="author-meta">
                     
                     
@@ -131,7 +166,7 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=GitHub%20Pages%20Bucket%20List%20Item%20Done&amp;url=http://merobertsjr.com/github-pages-bucket-list-item-done/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=GitHub%20Pages%20Bucket%20List%20Item%20-%20Done!&amp;url=http://merobertsjr.com/github-pages-bucket-list-item-done/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://merobertsjr.com/github-pages-bucket-list-item-done/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
@@ -149,12 +184,6 @@
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story prev no-cover" href="../welcome-to-ghost/">
-        <section class="post">
-            <h2>Welcome to Ghost</h2>
-            <p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you…</p>
-        </section>
-    </a>
 </aside>
 
 
